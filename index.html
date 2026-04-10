@@ -1,0 +1,1055 @@
+🔹 METHOD 1: Copy the Complete Code I'll display the full code - just copy and save as index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Boutique - Premium Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #c9a86a;
+            --secondary: #1a1a1a;
+            --accent: #d4af87;
+            --light: #f8f5f1;
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-light: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            height: 90vh;
+            background: linear-gradient(135deg, rgba(201, 168, 106, 0.9), rgba(212, 175, 135, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8f5f1" width="1200" height="800"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            color: var(--white);
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            text-align: center;
+        }
+
+        .highlight-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collections Section */
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .collection-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .team-card .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-card .phone {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .team-card .phone i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        /* Form Sections */
+        .form-section {
+            background: var(--light);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Feedback Display */
+        .feedback-list {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .feedback-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .feedback-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .feedback-item p {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-highlights {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Elegance Boutique</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#collections" onclick="closeMenu()">Collections</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+                <li><a href="#team" onclick="closeMenu()">Our Team</a></li>
+                <li><a href="#measurements" onclick="closeMenu()">Measurements</a></li>
+                <li><a href="#feedback" onclick="closeMenu()">Feedback</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Elegance Boutique</h1>
+            <p>Where Fashion Meets Perfection</p>
+            <a href="#collections" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Welcome to Elegance Boutique, your destination for exquisite fashion and timeless style. We specialize in curating the finest collection of traditional, western, and party wear that celebrates your unique personality. Each piece in our collection is handpicked to ensure the highest quality, perfect fit, and unmatched elegance.</p>
+                <p>Our passion for fashion, combined with expert tailoring and personalized service, ensures that every customer walks away with confidence and grace.</p>
+            </div>
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-gem"></i>
+                    <h3>Premium Quality</h3>
+                    <p>Finest fabrics</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Unique Designs</h3>
+                    <p>Exclusive collections</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-scissors"></i>
+                    <h3>Expert Tailoring</h3>
+                    <p>Perfect fit guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            
+            <!-- Traditional Wear -->
+            <div class="collection-category">
+                <h3 class="category-title">Traditional Wear</h3>
+                <div class="collections-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Designer Saree</h3>
+                            <p class="product-price">₹4,999</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Anarkali Suit</h3>
+                            <p class="product-price">₹3,499</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Lehenga Choli</h3>
+                            <p class="product-price">₹7,999</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Western Wear -->
+            <div class="collection-category">
+                <h3 class="category-title">Western Wear</h3>
+                <div class="collections-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Evening Gown</h3>
+                            <p class="product-price">₹5,499</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Casual Dress</h3>
+                            <p class="product-price">₹2,299</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Blazer Set</h3>
+                            <p class="product-price">₹4,299</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Party Wear -->
+            <div class="collection-category">
+                <h3 class="category-title">Party Wear</h3>
+                <div class="collections-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cocktail Dress</h3>
+                            <p class="product-price">₹6,999</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sequin Gown</h3>
+                            <p class="product-price">₹8,499</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Designer Outfit</h3>
+                            <p class="product-price">₹9,999</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-ring"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Priya Sharma</h3>
+                    <p class="role">Boutique Owner</p>
+                    <p class="phone"><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Rajesh Kumar</h3>
+                    <p class="role">Master Tailor</p>
+                    <p class="phone"><i class="fas fa-phone"></i> +91 98765 43211</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Measurements Section -->
+    <section id="measurements" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Submit Your Measurements</h2>
+            <div class="form-container">
+                <div class="success-message" id="measurementSuccess">
+                    Measurements submitted successfully!
+                </div>
+                <form id="measurementForm">
+                    <div class="form-group">
+                        <label for="m-name">Name *</label>
+                        <input type="text" id="m-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="m-phone">Phone Number *</label>
+                        <input type="tel" id="m-phone" required>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="m-chest">Chest (inches) *</label>
+                            <input type="number" id="m-chest" step="0.5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="m-waist">Waist (inches) *</label>
+                            <input type="number" id="m-waist" step="0.5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="m-length">Length (inches) *</label>
+                            <input type="number" id="m-length" step="0.5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="m-shoulder">Shoulder (inches) *</label>
+                            <input type="number" id="m-shoulder" step="0.5" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Measurements</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <div class="container">
+            <h2 class="section-title">Customer Feedback</h2>
+            <div class="form-container">
+                <div class="success-message" id="feedbackSuccess">
+                    Thank you for your feedback!
+                </div>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="f-name">Name *</label>
+                        <input type="text" id="f-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="f-message">Message *</label>
+                        <textarea id="f-message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
+                </form>
+            </div>
+
+            <div class="feedback-list" id="feedbackList"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@eleganceboutique.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Address</h3>
+                    <p>123 Fashion Street, MG Road, Bangalore - 560001</p>
+                </div>
+            </div>
+
+            <div class="form-container" style="margin-top: 3rem;">
+                <div class="success-message" id="contactSuccess">
+                    Message sent successfully! We'll get back to you soon.
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="c-name">Name *</label>
+                        <input type="text" id="c-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="c-email">Email *</label>
+                        <input type="email" id="c-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="c-message">Message *</label>
+                        <textarea id="c-message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Elegance Boutique. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Measurement Form
+        document.getElementById('measurementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const measurement = {
+                name: document.getElementById('m-name').value,
+                phone: document.getElementById('m-phone').value,
+                chest: document.getElementById('m-chest').value,
+                waist: document.getElementById('m-waist').value,
+                length: document.getElementById('m-length').value,
+                shoulder: document.getElementById('m-shoulder').value,
+                date: new Date().toLocaleString()
+            };
+
+            // Get existing measurements
+            let measurements = JSON.parse(localStorage.getItem('measurements') || '[]');
+            measurements.push(measurement);
+            localStorage.setItem('measurements', JSON.stringify(measurements));
+
+            // Show success message
+            const successMsg = document.getElementById('measurementSuccess');
+            successMsg.classList.add('show');
+            setTimeout(() => successMsg.classList.remove('show'), 3000);
+
+            // Reset form
+            this.reset();
+        });
+
+        // Feedback Form
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const feedback = {
+                name: document.getElementById('f-name').value,
+                message: document.getElementById('f-message').value,
+                date: new Date().toLocaleString()
+            };
+
+            // Get existing feedback
+            let feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+            feedbacks.push(feedback);
+            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+
+            // Show success message
+            const successMsg = document.getElementById('feedbackSuccess');
+            successMsg.classList.add('show');
+            setTimeout(() => successMsg.classList.remove('show'), 3000);
+
+            // Reset form and reload feedback
+            this.reset();
+            displayFeedback();
+        });
+
+        // Display Feedback
+        function displayFeedback() {
+            const feedbackList = document.getElementById('feedbackList');
+            const feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+            
+            if (feedbacks.length === 0) {
+                feedbackList.innerHTML = '<p style="text-align: center; color: var(--text-light);">No feedback yet. Be the first to share your experience!</p>';
+                return;
+            }
+
+            feedbackList.innerHTML = feedbacks.reverse().map(fb => `
+                <div class="feedback-item">
+                    <h4>${fb.name}</h4>
+                    <p>${fb.message}</p>
+                    <small style="color: var(--text-light); font-size: 0.85rem;">${fb.date}</small>
+                </div>
+            `).join('');
+        }
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const contact = {
+                name: document.getElementById('c-name').value,
+                email: document.getElementById('c-email').value,
+                message: document.getElementById('c-message').value,
+                date: new Date().toLocaleString()
+            };
+
+            // Get existing contacts
+            let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+            contacts.push(contact);
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+
+            // Show success message
+            const successMsg = document.getElementById('contactSuccess');
+            successMsg.classList.add('show');
+            setTimeout(() => successMsg.classList.remove('show'), 3000);
+
+            // Reset form
+            this.reset();
+        });
+
+        // Load feedback on page load
+        window.addEventListener('load', displayFeedback);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
